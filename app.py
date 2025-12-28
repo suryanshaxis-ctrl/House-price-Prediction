@@ -1,24 +1,19 @@
-from re import X
 import streamlit as st
-import time
-import pandas as pd
-import numpy as np 
-from sklearn.preprocessing import StandardScaler
 import pickle
+from sklearn.preprocessing import StandardScaler
+import pandas as pd
+import time
 from sklearn.datasets import fetch_california_housing
+st.title('🏠House Price prediction using ML')
 
-st.title('🏡 HOUSE PRICE PREDICTION USING ML')
-
-st.image('https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyaXhmZjBqdzcxZ2NmY3R5djV3YTI1M2pobDVrNGlxMmhlOHV3ZmpmaCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0Iy7ez9MiA0ChmbC/200w.gif')
+st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvQdqIasHkDTf5733FK14z5mPQ18VPhg_R_Q&s')
 
 df = pd.read_csv('house_data.csv')
-x = df.iloc[:,:-3]
+X = df.iloc[:,:-3]
 y = df.iloc[:,-1]
 
 final_X = X
 scaler = StandardScaler()
-scaled_x = scaler.fit_transform(final_x)
+scaled_X = scaler.fit_transform(final_X)
 
-st.sidebar.title('Select House Features:')
-
-
+st.sidebar.title('Select House features: ')
